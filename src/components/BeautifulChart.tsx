@@ -101,13 +101,6 @@ export default function BeautifulChart({ data, onAddDemoData, onResetChart }: Be
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
-          <div className="bg-blue-50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
-            <p className="text-sm text-blue-800 text-center">
-              <strong>निर्देश:</strong> यह चार्ट प्रत्येक रैयत के कुल रकवा को दर्शाता है। 
-              नए रिकॉर्ड जोड़ने पर चार्ट अपने आप अपडेट हो जाएगा।
-            </p>
-          </div>
-
           {data.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Chart Container */}
