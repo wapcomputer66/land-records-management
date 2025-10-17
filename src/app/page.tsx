@@ -16,6 +16,7 @@ import { Separator } from '@/components/ui/separator';
 import { toast } from '@/hooks/use-toast';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import * as XLSX from 'xlsx';
+import BeautifulChart from '@/components/BeautifulChart';
 
 interface User {
   id: string;
@@ -636,6 +637,45 @@ export default function Home() {
   };
 
   const chartData = getChartData();
+
+  // Demo functions for beautiful chart
+  const [demoChartData, setDemoChartData] = useState<any[]>([]);
+
+  const addDemoData = () => {
+    const raiyatNames = [
+      'राम कुमार', 'सुरेश यादव', 'अनीता देवी', 
+      'मोहन लाल', 'गीता सिंह', 'राजेश वर्मा'
+    ];
+    
+    const randomIndex = Math.floor(Math.random() * raiyatNames.length);
+    const newRaiyat = raiyatNames[randomIndex];
+    const newRakwa = parseFloat((Math.random() * 50 + 10).toFixed(2));
+    
+    setDemoChartData(prev => {
+      const existingIndex = prev.findIndex(item => item.name === newRaiyat);
+      
+      if (existingIndex !== -1) {
+        const updated = [...prev];
+        updated[existingIndex].value += newRakwa;
+        return updated;
+      } else {
+        return [...prev, { name: newRaiyat, value: newRakwa }];
+      }
+    });
+  };
+
+  const resetChart = () => {
+    setDemoChartData([]);
+  };
+
+  // Calculate percentages for demo data
+  const demoDataWithPercentages = demoChartData.map(item => {
+    const total = demoChartData.reduce((sum, d) => sum + d.value, 0);
+    return {
+      ...item,
+      percentage: total > 0 ? Math.round((item.value / total) * 100) : 0
+    };
+  });
 
   // If not logged in, show auth screen
   if (!user) {
@@ -1258,43 +1298,12 @@ export default function Home() {
                   </Card>
                 </div>
 
-                {/* Circle Chart */}
-                {chartData.length > 0 && (
-                  <Card className="mb-6">
-                    <CardHeader>
-                      <CardTitle>🥧 रैयत के अनुसार रकवा वितरण</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="h-80">
-                        <ResponsiveContainer width="100%" height="100%">
-                          <PieChart>
-                            <Pie
-                              data={chartData}
-                              cx="50%"
-                              cy="50%"
-                              labelLine={false}
-                              label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                              outerRadius={80}
-                              fill="#8884d8"
-                              dataKey="value"
-                            >
-                              {chartData.map((entry, index) => {
-                                const colors = [
-                                  '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
-                                  '#9966FF', '#FF9F40', '#C9CBCF', '#FF6384',
-                                  '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'
-                                ];
-                                return <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />;
-                              })}
-                            </Pie>
-                            <Tooltip formatter={(value: number) => [`${value.toFixed(2)} डिसमिल`, 'रकवा']} />
-                            <Legend />
-                          </PieChart>
-                        </ResponsiveContainer>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
+                {/* Beautiful Chart */}
+                <BeautifulChart
+                  data={demoDataWithPercentages}
+                  onAddDemoData={addDemoData}
+                  onResetChart={resetChart}
+                />
 
                 {/* Filter by Raiyat */}
                 <div className="mb-6">
