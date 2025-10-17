@@ -614,31 +614,28 @@ export default function Home() {
 
   const stats = calculateStats();
 
-  // Generate chart data for raiyat distribution
-  const generateChartData = () => {
+  // Generate chart data for circle chart
+  const getChartData = () => {
     if (!currentProject) return [];
     
     const raiyatData: Record<string, number> = {};
     currentProject.landRecords.forEach(record => {
-      if (record.raiyatName) {
-        raiyatData[record.raiyatName] = (raiyatData[record.raiyatName] || 0) + parseFloat(record.rakwa || '0');
+      if (record.raiyatName && record.rakwa) {
+        const rakwa = parseFloat(record.rakwa) || 0;
+        raiyatData[record.raiyatName] = (raiyatData[record.raiyatName] || 0) + rakwa;
       }
     });
-
-    const colors = [
-      '#10B981', '#14B8A6', '#06B6D4', '#0EA5E9', '#22C55E',
-      '#84CC16', '#A855F7', '#EC4899', '#F97316', '#F59E0B',
-      '#EF4444', '#F43F5E', '#8B5CF6', '#6366F1', '#3B82F6'
-    ];
-
+    
+    const totalRakwa = Object.values(raiyatData).reduce((sum, val) => sum + val, 0);
+    
     return Object.entries(raiyatData).map(([name, value], index) => ({
       name,
       value,
-      color: colors[index % colors.length]
+      percentage: totalRakwa > 0 ? Math.round((value / totalRakwa) * 100) : 0
     }));
   };
 
-  const chartData = generateChartData();
+  const chartData = getChartData();
 
   // If not logged in, show auth screen
   if (!user) {
@@ -1281,9 +1278,14 @@ export default function Home() {
                               fill="#8884d8"
                               dataKey="value"
                             >
-                              {chartData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.color} />
-                              ))}
+                              {chartData.map((entry, index) => {
+                                const colors = [
+                                  '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
+                                  '#9966FF', '#FF9F40', '#C9CBCF', '#FF6384',
+                                  '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'
+                                ];
+                                return <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />;
+                              })}
                             </Pie>
                             <Tooltip formatter={(value: number) => [`${value.toFixed(2)} डिसमिल`, 'रकवा']} />
                             <Legend />
