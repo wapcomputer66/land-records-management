@@ -31,12 +31,12 @@ export default function BeautifulChart({ data, onAddDemoData, onResetChart }: Be
 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
-      const data = payload[0];
+      const chartData = payload[0];
       return (
         <div className="bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-          <p className="font-semibold text-gray-800">{data.name}</p>
+          <p className="font-semibold text-gray-800">{chartData.name}</p>
           <p className="text-sm text-gray-600">
-            {data.value.toFixed(2)} डिसमिल ({data.percentage}%)
+            {chartData.value.toFixed(2)} डिसमिल ({chartData.percentage}%)
           </p>
         </div>
       );
@@ -97,14 +97,14 @@ export default function BeautifulChart({ data, onAddDemoData, onResetChart }: Be
       <Card className="overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
           <CardTitle className="text-xl text-center flex items-center justify-center gap-2">
-            🌾 भू-अभिलेख - Chart Demo
+            🌾 भू-अभिलेख - रकवा वितरण चार्ट
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
           <div className="bg-blue-50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
             <p className="text-sm text-blue-800 text-center">
-              <strong>निर्देश:</strong> यह डेमो पेज सिर्फ chart को दिखाने के लिए है। 
-              नीचे दिए गए बटन से डमी डेटा जोड़ें और chart को अपडेट होते देखें।
+              <strong>निर्देश:</strong> यह चार्ट प्रत्येक रैयत के कुल रकवा को दर्शाता है। 
+              नए रिकॉर्ड जोड़ने पर चार्ट अपने आप अपडेट हो जाएगा।
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export default function BeautifulChart({ data, onAddDemoData, onResetChart }: Be
 
               {/* Legend Container */}
               <div className="bg-gray-50 rounded-lg p-4 shadow-inner">
-                <h3 className="text-lg font-semibold mb-4 text-gray-800">विवरण</h3>
+                <h3 className="text-lg font-semibold mb-4 text-gray-800">रैयत विवरण</h3>
                 <div className="max-h-80 overflow-y-auto">
                   <CustomLegend />
                 </div>
@@ -164,7 +164,7 @@ export default function BeautifulChart({ data, onAddDemoData, onResetChart }: Be
                 <div className="text-6xl mb-4">📊</div>
                 <p className="text-gray-500 text-lg">कोई डेटा उपलब्ध नहीं है</p>
                 <p className="text-gray-400 text-sm mt-2">
-                  डमी डेटा जोड़ने के लिए नीचे दिए गए बटन पर क्लिक करें
+                  रिकॉर्ड जोड़ने के लिए फॉर्म टैब पर जाएं
                 </p>
               </div>
             </div>
@@ -183,28 +183,30 @@ export default function BeautifulChart({ data, onAddDemoData, onResetChart }: Be
         </CardContent>
       </Card>
 
-      {/* Demo Controls */}
-      <Card>
-        <CardContent className="pt-6">
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Button
-              onClick={onAddDemoData}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-            >
-              <span className="mr-2">➕</span>
-              डमी डेटा जोड़ें
-            </Button>
-            <Button
-              onClick={onResetChart}
-              variant="destructive"
-              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-            >
-              <span className="mr-2">🔄</span>
-              चार्ट रीसेट करें
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Demo Controls - only in development mode */}
+      {process.env.NODE_ENV === 'development' && onAddDemoData && onResetChart && (
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Button
+                onClick={onAddDemoData}
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <span className="mr-2">➕</span>
+                डमी डेटा जोड़ें
+              </Button>
+              <Button
+                onClick={onResetChart}
+                variant="destructive"
+                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <span className="mr-2">🔄</span>
+                चार्ट रीसेट करें
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

@@ -638,45 +638,6 @@ export default function Home() {
 
   const chartData = getChartData();
 
-  // Demo functions for beautiful chart
-  const [demoChartData, setDemoChartData] = useState<any[]>([]);
-
-  const addDemoData = () => {
-    const raiyatNames = [
-      'राम कुमार', 'सुरेश यादव', 'अनीता देवी', 
-      'मोहन लाल', 'गीता सिंह', 'राजेश वर्मा'
-    ];
-    
-    const randomIndex = Math.floor(Math.random() * raiyatNames.length);
-    const newRaiyat = raiyatNames[randomIndex];
-    const newRakwa = parseFloat((Math.random() * 50 + 10).toFixed(2));
-    
-    setDemoChartData(prev => {
-      const existingIndex = prev.findIndex(item => item.name === newRaiyat);
-      
-      if (existingIndex !== -1) {
-        const updated = [...prev];
-        updated[existingIndex].value += newRakwa;
-        return updated;
-      } else {
-        return [...prev, { name: newRaiyat, value: newRakwa }];
-      }
-    });
-  };
-
-  const resetChart = () => {
-    setDemoChartData([]);
-  };
-
-  // Calculate percentages for demo data
-  const demoDataWithPercentages = demoChartData.map(item => {
-    const total = demoChartData.reduce((sum, d) => sum + d.value, 0);
-    return {
-      ...item,
-      percentage: total > 0 ? Math.round((item.value / total) * 100) : 0
-    };
-  });
-
   // If not logged in, show auth screen
   if (!user) {
     return (
@@ -1300,9 +1261,7 @@ export default function Home() {
 
                 {/* Beautiful Chart */}
                 <BeautifulChart
-                  data={demoDataWithPercentages}
-                  onAddDemoData={addDemoData}
-                  onResetChart={resetChart}
+                  data={chartData}
                 />
 
                 {/* Filter by Raiyat */}
