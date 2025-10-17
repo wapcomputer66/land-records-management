@@ -105,8 +105,11 @@ export default function Home() {
   const [editingProjectName, setEditingProjectName] = useState('');
   const [importFile, setImportFile] = useState<File | null>(null);
   const [isImporting, setIsImporting] = useState(false);
+<<<<<<< HEAD
   const [showImportPopup, setShowImportPopup] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+=======
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
   const [projectToDelete, setProjectToDelete] = useState<string | null>(null);
 
   const currentProject = projects.find(p => p.id === currentProjectId) || projects[0] || null;
@@ -551,6 +554,7 @@ export default function Home() {
     
     try {
       const data = await importFile.arrayBuffer();
+<<<<<<< HEAD
       const workbook = XLSX.read(data, { type: 'buffer' });
       const sheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[sheetName];
@@ -623,6 +627,26 @@ export default function Home() {
         toast({ title: 'त्रुटि', description: 'कोई valid रिकॉर्ड नहीं मिला। कृपया फाइल format check करें।' });
         return;
       }
+=======
+      const workbook = XLSX.read(data);
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(worksheet);
+      
+      // Map Excel columns to our field names
+      const records = jsonData.map((row: any) => ({
+        raiyatName: row['रैयत नाम'] || row['raiyatName'] || '',
+        jamabandiNumber: row['जमाबंदी नंबर'] || row['jamabandiNumber'] || '',
+        khataNumber: row['खाता नंबर'] || row['khataNumber'] || '',
+        khesraNumber: row['खेसरा नंबर'] || row['khesraNumber'] || '',
+        rakwa: row['रकवा'] || row['rakwa'] || '',
+        uttar: row['उत्तर'] || row['uttar'] || '',
+        dakshin: row['दक्षिण'] || row['dakshin'] || '',
+        purab: row['पूर्व'] || row['purab'] || '',
+        paschim: row['पश्चिम'] || row['paschim'] || '',
+        remarks: row['टिप्पणी'] || row['remarks'] || ''
+      })).filter(record => record.raiyatName && record.khesraNumber);
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
       
       const response = await fetch(`/api/projects/${currentProjectId}/import`, {
         method: 'POST',
@@ -643,6 +667,7 @@ export default function Home() {
         
         if (data.errors.length > 0) {
           console.log('Import errors:', data.errors);
+<<<<<<< HEAD
           data.errors.forEach((error: string, index: number) => {
             setTimeout(() => {
               toast({ 
@@ -656,18 +681,28 @@ export default function Home() {
         
         setImportFile(null);
         setShowImportPopup(false);
+=======
+        }
+        
+        setImportFile(null);
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
       } else {
         const errorData = await response.json();
         toast({ title: 'त्रुटि', description: errorData.error || 'इंपोर्ट विफल' });
       }
     } catch (error) {
+<<<<<<< HEAD
       console.error('Import error:', error);
       toast({ title: 'त्रुटि', description: `फाइल पढ़ने में विफल: ${error instanceof Error ? error.message : 'अज्ञात त्रुटि'}` });
+=======
+      toast({ title: 'त्रुटि', description: 'फाइल पढ़ने में विफल' });
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
     } finally {
       setIsImporting(false);
     }
   };
 
+<<<<<<< HEAD
   // Drag and drop handlers
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -701,6 +736,8 @@ export default function Home() {
     }
   };
 
+=======
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
   // Calculate stats
   const calculateStats = () => {
     if (!currentProject) return { totalRaiyat: 0, totalRecords: 0, totalArea: 0 };
@@ -1389,6 +1426,7 @@ export default function Home() {
                   </div>
                 </div>
 
+<<<<<<< HEAD
                 {/* Export and Import Buttons */}
                 <div className="flex flex-wrap gap-4 justify-center mb-6">
                   {/* Export Record Button */}
@@ -1408,6 +1446,28 @@ export default function Home() {
                     <span className="mr-2">📤</span>
                     Import Record
                   </Button>
+=======
+                {/* Export Buttons */}
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <Button onClick={exportCurrentProject}>
+                    📥 Current Project Export
+                  </Button>
+                  
+                  <div className="flex items-center space-x-2">
+                    <Input
+                      type="file"
+                      accept=".xlsx,.xls,.csv"
+                      onChange={(e) => setImportFile(e.target.files?.[0] || null)}
+                      className="w-64"
+                    />
+                    <Button 
+                      onClick={handleFileImport} 
+                      disabled={!importFile || isImporting}
+                    >
+                      {isImporting ? '🔄 इंपोर्ट हो रहा है...' : '📤 इंपोर्ट करें'}
+                    </Button>
+                  </div>
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
                 </div>
 
                 {/* Records Table */}
@@ -1748,6 +1808,7 @@ export default function Home() {
           </div>
         </DialogContent>
       </Dialog>
+<<<<<<< HEAD
 
       {/* Import File Popup */}
       <Dialog open={showImportPopup} onOpenChange={setShowImportPopup}>
@@ -1882,6 +1943,8 @@ export default function Home() {
           </div>
         </DialogContent>
       </Dialog>
+=======
+>>>>>>> 7cbce68e8174bb775f33b0504c11728f573c7eef
     </div>
   );
 }
