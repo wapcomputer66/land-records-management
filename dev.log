@@ -1,0 +1,356 @@
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): server.ts src/**/*[39m
+[33m[nodemon] watching extensions: ts,tsx,js,jsx[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ⚠ Cross origin request detected from preview-chat-eee100bc-53a3-484a-8a7f-eee395e93834.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /api/projects/[id]/records ...
+ ✓ Compiled /api/projects/[id]/records in 2.3s (365 modules)
+Error: Route "/api/projects/[id]/records" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at POST (src/app/api/projects/[id]/records/route.ts:10:29)
+   8 | ) {
+   9 |   try {
+> 10 |     const projectId = params.id;
+     |                             ^
+  11 |     const {
+  12 |       raiyatName,
+  13 |       jamabandiNumber,
+prisma:query SELECT `main`.`Project`.`id`, `main`.`Project`.`name`, `main`.`Project`.`userId`, `main`.`Project`.`createdAt`, `main`.`Project`.`updatedAt` FROM `main`.`Project` WHERE (`main`.`Project`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/projects/cmguxm54c0003p9myozyfbbik/records 404 in 3407ms
+ ○ Compiling / ...
+ ✓ Compiled / in 7.4s (1982 modules)
+ GET / 200 in 8698ms
+ ✓ Compiled /favicon.ico in 397ms (1018 modules)
+ GET /favicon.ico 200 in 462ms
+ GET / 200 in 424ms
+ GET /favicon.ico 200 in 10ms
+ ✓ Compiled /api/auth/login in 446ms (1956 modules)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 645ms
+ GET / 200 in 420ms
+ GET /favicon.ico 200 in 19ms
+ GET / 200 in 45ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling / ...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 8.9s (1961 modules)
+ GET / 200 in 10374ms
+ GET / 200 in 145ms
+ GET / 200 in 123ms
+ GET / 200 in 51ms
+ GET / 200 in 53ms
+ GET / 200 in 58ms
+ GET / 200 in 44ms
+ GET / 200 in 53ms
+ GET / 200 in 84ms
+ GET / 200 in 84ms
+ GET / 200 in 55ms
+ GET / 200 in 43ms
+ GET / 200 in 85ms
+ GET / 200 in 84ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 2.4s (367 modules)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 2781ms
+ ⚠ Cross origin request detected from preview-chat-eee100bc-53a3-484a-8a7f-eee395e93834.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 8.8s (1961 modules)
+ GET / 200 in 10283ms
+ GET / 200 in 125ms
+ GET / 200 in 54ms
+ GET / 200 in 50ms
+ GET / 200 in 53ms
+ GET / 200 in 43ms
+ GET / 200 in 47ms
+ GET / 200 in 47ms
+ GET / 200 in 46ms
+ GET / 200 in 47ms
+ GET / 200 in 38ms
+ GET / 200 in 38ms
+ GET / 200 in 47ms
+ GET / 200 in 39ms
+ GET / 200 in 39ms
+ GET / 200 in 42ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 2.6s (367 modules)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 3032ms
+ ✓ Compiled /api/projects in 309ms (365 modules)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query INSERT INTO `main`.`Project` (`id`, `name`, `userId`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?) RETURNING `id` AS `id`
+prisma:query INSERT INTO `main`.`Raiyat` (`id`, `name`, `projectId`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?), (?,?,?,?,?), (?,?,?,?,?), (?,?,?,?,?), (?,?,?,?,?)
+prisma:query SELECT `main`.`Project`.`id`, `main`.`Project`.`name`, `main`.`Project`.`userId`, `main`.`Project`.`createdAt`, `main`.`Project`.`updatedAt` FROM `main`.`Project` WHERE `main`.`Project`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Raiyat`.`id`, `main`.`Raiyat`.`name`, `main`.`Raiyat`.`projectId`, `main`.`Raiyat`.`createdAt`, `main`.`Raiyat`.`updatedAt` FROM `main`.`Raiyat` WHERE `main`.`Raiyat`.`projectId` IN (?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`LandRecord`.`id`, `main`.`LandRecord`.`timestamp`, `main`.`LandRecord`.`jamabandiNumber`, `main`.`LandRecord`.`khataNumber`, `main`.`LandRecord`.`khesraNumber`, `main`.`LandRecord`.`rakwa`, `main`.`LandRecord`.`uttar`, `main`.`LandRecord`.`dakshin`, `main`.`LandRecord`.`purab`, `main`.`LandRecord`.`paschim`, `main`.`LandRecord`.`remarks`, `main`.`LandRecord`.`raiyatId`, `main`.`LandRecord`.`projectId`, `main`.`LandRecord`.`createdAt`, `main`.`LandRecord`.`updatedAt` FROM `main`.`LandRecord` WHERE `main`.`LandRecord`.`projectId` IN (?) LIMIT ? OFFSET ?
+prisma:query COMMIT
+ POST /api/projects 200 in 378ms
+ ○ Compiling / ...
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 9.1s (1961 modules)
+ GET / 200 in 10492ms
+ GET / 200 in 153ms
+ GET / 200 in 54ms
+ GET / 200 in 46ms
+ GET / 200 in 44ms
+ GET / 200 in 43ms
+ GET / 200 in 52ms
+ GET / 200 in 52ms
+ GET / 200 in 43ms
+ GET / 200 in 48ms
+ GET / 200 in 43ms
+ GET / 200 in 42ms
+ GET / 200 in 54ms
+ GET / 200 in 38ms
+ GET / 200 in 39ms
+ GET / 200 in 47ms
+ GET / 200 in 37ms
+ ✓ Compiled /favicon.ico in 392ms (1012 modules)
+ GET /favicon.ico 200 in 518ms
+ GET / 200 in 410ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://127.0.0.1:3000
+> Socket.IO server running at ws://127.0.0.1:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 9s (1961 modules)
+ GET / 200 in 10369ms
+ GET / 200 in 134ms
+ GET / 200 in 56ms
+ GET / 200 in 46ms
+ GET / 200 in 49ms
+ GET / 200 in 41ms
+ GET / 200 in 53ms
+ GET / 200 in 43ms
+ GET / 200 in 43ms
+ GET / 200 in 49ms
+ GET / 200 in 49ms
+ ✓ Compiled /favicon.ico in 497ms (1012 modules)
+ GET /favicon.ico 200 in 642ms
+ GET / 200 in 394ms
+ GET /favicon.ico 200 in 8ms
+ GET / 200 in 42ms
+ GET /favicon.ico 200 in 7ms
+ ○ Compiling /api/auth/login ...
+ ✓ Compiled /api/auth/login in 762ms (1954 modules)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 1012ms
+ ⚠ Cross origin request detected from preview-chat-eee100bc-53a3-484a-8a7f-eee395e93834.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 220ms
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 104ms
+ ✓ Compiled /api/projects in 301ms (1956 modules)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query INSERT INTO `main`.`Project` (`id`, `name`, `userId`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?) RETURNING `id` AS `id`
+prisma:query INSERT INTO `main`.`Raiyat` (`id`, `name`, `projectId`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?), (?,?,?,?,?), (?,?,?,?,?), (?,?,?,?,?), (?,?,?,?,?)
+prisma:query SELECT `main`.`Project`.`id`, `main`.`Project`.`name`, `main`.`Project`.`userId`, `main`.`Project`.`createdAt`, `main`.`Project`.`updatedAt` FROM `main`.`Project` WHERE `main`.`Project`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Raiyat`.`id`, `main`.`Raiyat`.`name`, `main`.`Raiyat`.`projectId`, `main`.`Raiyat`.`createdAt`, `main`.`Raiyat`.`updatedAt` FROM `main`.`Raiyat` WHERE `main`.`Raiyat`.`projectId` IN (?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`LandRecord`.`id`, `main`.`LandRecord`.`timestamp`, `main`.`LandRecord`.`jamabandiNumber`, `main`.`LandRecord`.`khataNumber`, `main`.`LandRecord`.`khesraNumber`, `main`.`LandRecord`.`rakwa`, `main`.`LandRecord`.`uttar`, `main`.`LandRecord`.`dakshin`, `main`.`LandRecord`.`purab`, `main`.`LandRecord`.`paschim`, `main`.`LandRecord`.`remarks`, `main`.`LandRecord`.`raiyatId`, `main`.`LandRecord`.`projectId`, `main`.`LandRecord`.`createdAt`, `main`.`LandRecord`.`updatedAt` FROM `main`.`LandRecord` WHERE `main`.`LandRecord`.`projectId` IN (?) LIMIT ? OFFSET ?
+prisma:query COMMIT
+ POST /api/projects 200 in 335ms
+ GET / 200 in 400ms
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 131ms
+ GET / 200 in 51ms
+ GET /favicon.ico 200 in 15ms
+ GET / 200 in 47ms
+ GET /favicon.ico 200 in 8ms
+ GET / 200 in 54ms
+ GET / 200 in 45ms
+ GET / 200 in 47ms
+ GET / 200 in 43ms
+ GET / 200 in 62ms
+ GET / 200 in 45ms
+ GET / 200 in 45ms
+ GET / 200 in 42ms
+ GET / 200 in 45ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 834ms (1948 modules)
+ GET / 404 in 1046ms
+ GET / 200 in 274ms
+ GET / 200 in 40ms
+ GET / 200 in 88ms
+ GET /_next/static/css/app/layout.css?v=1760713155267 404 in 39ms
+ GET /_next/static/css/app/layout.css?v=1760713155566 404 in 119ms
+ GET /_next/static/chunks/main-app.js?v=1760713155267 404 in 74ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 73ms
+ GET /_next/static/chunks/app/page.js 404 in 38ms
+ GET /_next/static/chunks/main-app.js?v=1760713155566 404 in 40ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 37ms
+ GET /_next/static/chunks/app/page.js 404 in 41ms
+ ✓ Compiled /favicon.ico in 163ms (1013 modules)
+ GET /favicon.ico 200 in 264ms
+ GET / 200 in 234ms
+ GET /_next/static/css/app/layout.css?v=1760713160921 404 in 150ms
+ GET /_next/static/chunks/app/page.js 404 in 106ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 104ms
+ GET /_next/static/chunks/main-app.js?v=1760713160921 404 in 105ms
+ GET /favicon.ico 200 in 7ms
+ GET /? 200 in 39ms
+ GET /_next/static/css/app/layout.css?v=1760713164288 404 in 115ms
+ GET /_next/static/chunks/main-app.js?v=1760713164288 404 in 69ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 69ms
+ GET /_next/static/chunks/app/page.js 404 in 34ms
+ GET / 200 in 47ms
+ GET /_next/static/css/app/layout.css?v=1760713237881 404 in 39ms
+ GET /_next/static/chunks/main-app.js?v=1760713237881 404 in 39ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 81ms
+ GET /_next/static/chunks/app/page.js 404 in 40ms
+ GET / 200 in 44ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 115ms
+ GET /_next/static/css/app/layout.css?v=1760713244414 404 in 70ms
+ GET /_next/static/chunks/main-app.js?v=1760713244414 404 in 69ms
+ GET /_next/static/chunks/app/page.js 404 in 34ms
+ GET / 200 in 42ms
+ GET /_next/static/css/app/layout.css?v=1760713263112 404 in 43ms
+ GET /_next/static/chunks/main-app.js?v=1760713263112 404 in 35ms
+ GET / 200 in 39ms
+ GET /_next/static/css/app/layout.css?v=1760713264211 404 in 64ms
+ GET /_next/static/chunks/main-app.js?v=1760713264211 404 in 34ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 34ms
+ GET /_next/static/chunks/app/page.js 404 in 30ms
+ GET / 200 in 35ms
+ GET / 200 in 42ms
+ GET /_next/static/css/app/layout.css?v=1760713297991 404 in 36ms
+ GET / 200 in 43ms
+ GET / 200 in 40ms
+ GET / 200 in 44ms
+ GET /_next/static/css/app/layout.css?v=1760713382754 404 in 35ms
+ GET /_next/static/chunks/main-app.js?v=1760713382754 404 in 33ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 37ms
+ GET /_next/static/chunks/app/page.js 404 in 38ms
+ GET / 200 in 41ms
+ GET /_next/static/css/app/layout.css?v=1760713396574 404 in 61ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 97ms
+ GET /_next/static/chunks/main-app.js?v=1760713396574 404 in 65ms
+ GET /_next/static/chunks/app/page.js 404 in 40ms
+ GET / 200 in 41ms
+ GET /_next/static/css/app/layout.css?v=1760713399272 404 in 97ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 95ms
+ GET /_next/static/chunks/main-app.js?v=1760713399272 404 in 51ms
+ GET /_next/static/chunks/app/page.js 404 in 31ms
+ GET / 200 in 36ms
+ GET /_next/static/css/app/layout.css?v=1760713403924 404 in 97ms
+ GET /_next/static/chunks/main-app.js?v=1760713403924 404 in 59ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 58ms
+ GET /_next/static/chunks/app/page.js 404 in 32ms
+ GET / 200 in 32ms
+ GET / 200 in 39ms
+ GET /_next/static/css/app/layout.css?v=1760713408578 404 in 34ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 67ms
+ GET /_next/static/chunks/main-app.js?v=1760713408578 404 in 45ms
+ GET /_next/static/chunks/app/page.js 404 in 27ms
+ GET / 200 in 41ms
+ GET /_next/static/css/app/layout.css?v=1760713421993 404 in 89ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 70ms
+ GET /_next/static/chunks/main-app.js?v=1760713421993 404 in 72ms
+ GET /_next/static/chunks/app/page.js 404 in 29ms
+ GET / 200 in 40ms
+ GET /_next/static/css/app/layout.css?v=1760713570374 404 in 35ms
+ GET /_next/static/chunks/main-app.js?v=1760713570374 404 in 33ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 63ms
+ GET /_next/static/chunks/app/page.js 404 in 43ms
+ GET / 200 in 36ms
+ GET /_next/static/css/app/layout.css?v=1760713644873 404 in 37ms
+ GET /_next/static/chunks/main-app.js?v=1760713644873 404 in 71ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 44ms
+ GET /_next/static/chunks/app/page.js 404 in 35ms
+ GET / 200 in 35ms
+ GET / 200 in 38ms
+ GET /_next/static/css/app/layout.css?v=1760713834276 404 in 33ms
+ GET /_next/static/chunks/main-app.js?v=1760713834276 404 in 95ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 93ms
+ GET /_next/static/chunks/app/page.js 404 in 39ms
+ GET / 200 in 43ms
+ GET /_next/static/css/app/layout.css?v=1760713968076 404 in 33ms
+ GET /_next/static/chunks/main-app.js?v=1760713968076 404 in 71ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 69ms
+ GET /_next/static/chunks/app/page.js 404 in 35ms
+ GET / 200 in 48ms
+ GET /_next/static/css/app/layout.css?v=1760714144998 404 in 43ms
+ GET /_next/static/chunks/main-app.js?v=1760714144998 404 in 87ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 75ms
+ GET /_next/static/chunks/app/page.js 404 in 36ms
+ GET / 200 in 38ms
+ GET /_next/static/css/app/layout.css?v=1760714495231 404 in 34ms
+ GET /_next/static/chunks/main-app.js?v=1760714495231 404 in 74ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 47ms
+ GET /_next/static/chunks/app/page.js 404 in 40ms
+ GET / 200 in 41ms
+ GET /_next/static/css/app/layout.css?v=1760714641866 404 in 35ms
+ GET /_next/static/chunks/main-app.js?v=1760714641866 404 in 34ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 33ms
+ GET /_next/static/chunks/app/page.js 404 in 31ms
+ GET / 200 in 58ms
+ GET /_next/static/css/app/layout.css?v=1760714947095 404 in 42ms
+ GET /_next/static/chunks/main-app.js?v=1760714947095 404 in 79ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 52ms
+ GET /_next/static/chunks/app/page.js 404 in 46ms
